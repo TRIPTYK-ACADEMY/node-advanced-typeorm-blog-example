@@ -1,11 +1,14 @@
 import { Router } from 'express';
-import { TodoController } from '../controllers/api/v1/TodoController';
-
 
 const apiTodosRouter = Router();
 
 //DEFINE my Routes for todos
-apiTodosRouter.get('/api/v1/todos', TodoController.findAll);
+apiTodosRouter.get('/api/v1/status', (req, res) => {
+    res.statusCode =200;
+    res.json({
+        status : 'online'
+    });
+});
 
 
 export {apiTodosRouter};
